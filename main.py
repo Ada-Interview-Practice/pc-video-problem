@@ -1,6 +1,27 @@
 def group_size(friend_data, start):
-    # Your solution here!
-    pass
+    # Will hold already visited friends
+    visited = set()
+
+    # Recursive helper to count from a starting person
+    def count(start):
+        # Do not count a person if they've already been visited
+        if start in visited:
+            return 0
+
+        # Add the person to the visited set
+        visited.add(start)
+
+        # Count the current person
+        total = 1
+
+        # Recursively call and sum from each friend
+        for friend in friend_data[start]:
+            total += count(friend)
+
+        return total
+
+    # Call helper from input person
+    return count(start)
 
 
 friend_data = {

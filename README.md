@@ -67,3 +67,53 @@ The following table shows a selection of people, and the group size that would r
 | Yuki      | 2          |
 | Carlos    | 3          |
 | Charles   | 3          |
+
+## Notes for the Interviewer
+
+### Clarifying Questions
+
+#### Q: Are friendships always bidirectional?
+
+A: Yes. If person A is friends with person B, you are guaranteed that person B is also friends with person A. It will always go in both directions.
+
+#### Q: Should I include the input person in the count?
+
+A: Yes.
+
+#### Q: Can someone show up in the values but not in the keys?
+
+A: No. You are guaranteed that if a person shows up in the values then they will have a corresponding key in the dictionary.
+
+#### Q: What if I am passed a person who is not in the dictionary?
+
+A: You are guaranteed the input person will be a key in the dictionary.
+
+#### Q: What should I do if there's invalid data?
+
+A: You can assume the data will be valid.
+
+#### Q: Can I mutate the input?
+
+A: No.
+
+### Hints
+
+- If your candidate struggles with an initial algorithm, ask them what type of search algorithm would be helpful here. Either BFS or DFS can work! Have them talk through what needs to happen at each step of the search. Have them talk through an example starting with Sebastian, and have them describe which positions would be visited in what order.
+
+- Encourage your candidate to print the person at each step of the search if they are not passing the test cases and are unsure why. This can help debug the path that the search takes (and can be especially helpful for debugging infinite loops).
+
+## Optional Bonus At-Home Challenges
+
+To be attempted after completing the interview.
+
+- What are the time/space complexities of the sample solution?
+
+- If you wrote a solution that used DFS, try writing a solution that uses BFS or vice versa.
+
+- If you wrote a solution that used recursion, try writing a solution that uses iteration or vice versa.
+
+### Extra Hard
+
+- Suppose that instead of a person being guaranteed to send a video to a friend, they instead only have a 1 in 3 chance to send it to each person. Write a function that accepts a dictionary and a start person and returns the expected (average) number of people it will be sent to. Trying solving this in two ways: one by applying probability theory and one by using Monte Carlo sampling. Research either as necessary to achieve this.
+
+- Solve the previous probability problem, but this time return an EXACT result - no rounding error from floats or decimals allowed. Hint: research the built-in Python `fractions` module.
